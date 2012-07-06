@@ -9,6 +9,7 @@ gem 'pg', '~> 0.13.2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.10.1'
+  gem 'guard-rspec', '~> 1.1.0'
 end
 
 # Gems used only for assets and not required
@@ -27,6 +28,8 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara', '~> 1.1.2'
+  gem 'rb-inotify', '~> 0.8.8'
+  gem 'libnotify', '~> 0.7.4'
 end
 
 # To use ActiveModel has_secure_password
