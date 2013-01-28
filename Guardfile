@@ -5,6 +5,8 @@
 # ('active_support/inflector' might be sufficient)
 require 'active_support/core_ext'
 
+notification :libnotify, :timeout => 3, :transient => true, :append => true, :urgency => :critical
+
 guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')
   watch('config/environment.rb')
