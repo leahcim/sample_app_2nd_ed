@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Static pages" do
 
-  let(:base_title) { 'Ruby on Rails Tutorial Sample App |' }
+  let(:base_title) { 'Ruby on Rails Tutorial Sample App' }
 
   describe "Home page" do
 
@@ -11,12 +11,21 @@ describe "Static pages" do
       page.should have_selector('h1', :text => 'Sample App')
     end
 
-    it "should have the title 'Home'" do
+    it "should have the base title" do
       visit '/static_pages/home'
-      page.should have_title("#{base_title} Home")
+      page.should have_title(base_title)
+    end
+
+    it "should not have a custom page title" do
+      visit '/static_pages/home'
+      page.should_not have_title('| Home')
+    end
+
+    it "should not have a title divider '|'" do
+      visit '/static_pages/home'
+      page.should_not have_title('|')
     end
   end
-
 
   describe "Help page" do
 
@@ -27,7 +36,7 @@ describe "Static pages" do
 
     it "should have the title 'Help'" do
       visit '/static_pages/help'
-      page.should have_title("#{base_title} Help")
+      page.should have_title("#{base_title} | Help")
     end
   end
 
@@ -40,7 +49,7 @@ describe "Static pages" do
 
     it "should have the title 'About Us'" do
       visit '/static_pages/about'
-      page.should have_title("#{base_title} About Us")
+      page.should have_title("#{base_title} | About Us")
     end
   end
 
@@ -53,7 +62,7 @@ describe "Static pages" do
 
     it "should have the title 'Contact'" do
       visit '/static_pages/contact'
-      page.should have_title("#{base_title} Contact")
+      page.should have_title("#{base_title} | Contact")
     end
   end
 end
