@@ -46,7 +46,7 @@ guard 'rspec', :all_after_pass => false, :cli => '--drb' do
 
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$}) do
-    |m| "spec/requests/#{m[1].singularize}_pages_spec.rb"
+    |m| "spec/features/#{m[1].singularize}_pages_spec.rb"
   end
 
   # Turnip features and steps
