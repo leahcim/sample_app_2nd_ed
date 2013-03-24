@@ -27,4 +27,6 @@ group :development do
   gem 'libnotify', '~> 0.8.0'
   gem 'spork', '~> 0.9.2'
   gem 'guard-spork', '~> 1.5.0'
+  gem 'annotate', '2.5.0'
+  gem 'guard-annotate', '~> 1.0.0'
 end
