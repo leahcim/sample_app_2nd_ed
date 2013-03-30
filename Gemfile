@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'pg', '0.14.1'
+gem 'pg', '0.15.0'
 gem 'bootstrap-sass', '2.3.1.0'
 gem 'jquery-rails',   '2.2.1'
 
@@ -18,7 +18,7 @@ group :assets do
 end
 
 group :test do
-  gem 'capybara', '~> 2.0.2'
+  gem 'capybara', '~> 2.0.3'
 end
 
 group :development do
